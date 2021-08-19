@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>
+        Imersão Dev - Aula 03
+    </title>
+</head>
+
+<style>
+    body {
+        font-family: 'Roboto Mono', monospace;
+        min-height: 600px;
+        background-image: url('https://external-preview.redd.it/GOkP8onbuyjGmN9Rc8Que5mw21CdSw6OuXpAKUuE6-4.jpg?auto=webp&s=2bc0e522d1f2fa887333286d557466b2be00fa5e');
+        background-color: #000000;
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+    }
+
+    .container {
+        text-align: center;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    .page-title {
+        color: #ffffff;
+        margin: 0 0 5px;
+    }
+
+    .page-subtitle {
+        color: #ffffff;
+        margin-top: 5px;
+    }
+
+    .page-logo {
+        width: 200px;
+    }
+
+    .alura-logo {
+        width: 40px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    @media (max-height: 500px) {
+        body {
+            min-height: 800px;
+        }
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            Jogo da adivinhação
+        </h1>
+        <p class="page-subtitle">
+            Digite um número de 0 a 10
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-mentalista.svg" class="page-logo"
+            alt="">
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+
+    <script type="text/javascript">
+        var numerosecreto = parseInt(Math.random() * 10)
+        var tentativas = 3
+
+        while (tentativas > 0) {
+            var chute = parseInt(prompt(" Digite um número entre 0 e 10"))
+
+            if (numerosecreto == chute) {
+                alert("Acertou")
+                break
+            } else if (chute > numerosecreto) {
+                alert("O número secreto é menor")
+                tentativas = tentativas - 1
+            } else if (chute < numerosecreto) {
+                alert("O número secreto é maior")
+                tentativas = tentativas - 1
+            }
+
+
+        }
+
+        if (chute != numerosecreto) {
+            alert(" Poxa que pena, suas tentativas acabaram. o número secreto era: " + numerosecreto)
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>
